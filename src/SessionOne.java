@@ -16,8 +16,6 @@ public class SessionOne {
                 isAnAmstrongNumber(number);
             case 2:
                 isAnStrongNumber(number);
-            case 3:
-                isAPerfectNumber(Integer.valueOf(number));
         }
     }
 
@@ -57,22 +55,6 @@ public class SessionOne {
             System.out.println("The number is a Strong number " + isStrong);
         } else {
             System.out.println("The number is not a Strong number " + isStrong);
-        }
-    }
-
-    public static void isAPerfectNumber(int number) {
-        int divisors = 0;
-
-        for (int i = 1; i < number; i++) {
-            if (number % i == 0) {
-                divisors += i;
-            }
-        }
-
-        if (divisors == number) {
-            System.out.println("The entered number " + number + " is a perfect number");
-        } else {
-            System.out.println("The entered number " + number + " is not a perfect number");
         }
     }
 }
