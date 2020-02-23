@@ -26,16 +26,16 @@ public class SessionOne {
     public static void isAnArmstrongNumber(String number) {
         String[] digits = number.split("(?<=.)");
 
-        double isAmstrong = 0;
+        double isArmstrong = 0;
 
         for (int i = 0; i < digits.length; i++) {
-            isAmstrong += Math.pow(Double.parseDouble(digits[i]), 3);
+            isArmstrong += Math.pow(Double.parseDouble(digits[i]), 3);
         }
 
-        if (Integer.valueOf(number) == isAmstrong) {
+        if (Integer.valueOf(number) == isArmstrong) {
             System.out.println("it is an Armstrong number");
         } else {
-            System.out.println("it is not an Armnstrong number");
+            System.out.println("it is not an Armstrong number");
         }
     }
 
