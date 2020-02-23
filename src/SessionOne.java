@@ -1,10 +1,12 @@
 import java.util.Scanner;
 
 public class SessionOne {
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Press 1, if you want to see if it's an SessionOne number");
+        System.out.println("Press 1, if you want to see if it's an Armstrong number");
         System.out.println("Press 2, whether you want to see if it's an Strong number");
+        System.out.println("Press 3, whether you want to see if it's an Perfect number");
 
         int option = input.nextInt();
 
@@ -13,7 +15,7 @@ public class SessionOne {
 
         switch (option) {
             case 1:
-                isAnAmstrongNumber(number);
+                isAnArmstrongNumber(number);
             case 2:
                 isAnStrongNumber(number);
             case 3:
@@ -21,19 +23,19 @@ public class SessionOne {
         }
     }
 
-    public static void isAnAmstrongNumber(String number) {
+    public static void isAnArmstrongNumber(String number) {
         String[] digits = number.split("(?<=.)");
 
-        double is_amstrong = 0;
+        double isAmstrong = 0;
 
         for (int i = 0; i < digits.length; i++) {
-            is_amstrong += Math.pow(Double.parseDouble(digits[i]), 3);
+            isAmstrong += Math.pow(Double.parseDouble(digits[i]), 3);
         }
 
-        if (Integer.valueOf(number) == is_amstrong) {
-            System.out.println("it is an SessionOne number");
+        if (Integer.valueOf(number) == isAmstrong) {
+            System.out.println("it is an Armstrong number");
         } else {
-            System.out.println("it is not an SessionOne number");
+            System.out.println("it is not an Armnstrong number");
         }
     }
 
