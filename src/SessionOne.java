@@ -17,7 +17,7 @@ public class SessionOne {
             case 1:
                 isAnArmstrongNumber(number);
             case 2:
-                isAnStrongNumber(number);
+                isAStrongNumber(number);
             case 3:
                 isAPerfectNumber(Integer.valueOf(number));
         }
@@ -39,7 +39,7 @@ public class SessionOne {
         }
     }
 
-    public static void isAnStrongNumber(String number) {
+    public static void isAStrongNumber(String number) {
         String[] digits = number.split("(?<=.)");
 
         double isStrong = 0;
