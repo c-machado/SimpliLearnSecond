@@ -17,33 +17,35 @@ public class SessionOne {
 
         switch (option) {
             case 1:
-                isAnAmstrongNumber(number);
+                isAnArmstrongNumber(number);
             case 2:
-                isAnStrongNumber(number);
+                isAStrongNumber(number);
             case 3:
                 isAPerfectNumber(Integer.valueOf(number));
             case 4:
-                nextPrimeNumber(Integer.valueOf(number));
+                isAPrimeNumber(Integer.valueOf(number));
         }
     }
 
-    public static void isAnAmstrongNumber(String number) {
+    public static void isAnArmstrongNumber(String number) {
         String[] digits = number.split("(?<=.)");
 
-        double is_amstrong = 0;
+        double isArmstrong = 0;
 
         for (int i = 0; i < digits.length; i++) {
-            is_amstrong += Math.pow(Double.parseDouble(digits[i]), 3);
+
+            isArmstrong += Math.pow(Double.parseDouble(digits[i]), 3);
         }
 
-        if (Integer.valueOf(number) == is_amstrong) {
-            System.out.println("it is an SessionOne number");
+        if (Integer.valueOf(number) == isArmstrong) {
+            System.out.println("it is an Armstrong number");
         } else {
-            System.out.println("it is not an SessionOne number");
+            System.out.println("it is not an Armstrong number");
         }
     }
 
-    public static void isAnStrongNumber(String number) {
+
+    public static void isAStrongNumber(String number) {
         String[] digits = number.split("(?<=.)");
 
         double isStrong = 0;
@@ -81,18 +83,18 @@ public class SessionOne {
     }
 
     public static void nextPrimeNumber(int number){
-        boolean isPrime = primeNumber(number+1);
+        boolean isPrime = isAPrimeNumber(number+1);
         int nextPrime = number+2;
         while (isPrime==false){
             nextPrime = number+1;
-            isPrime = primeNumber(nextPrime);
+            isPrime = isAPrimeNumber(nextPrime);
         }
         if(isPrime == true){
             System.out.println("number " + nextPrime);
         }
     }
 
-    public static boolean primeNumber(int number){
+    public static boolean isAPrimeNumber(int number){
         int divisors = 1;
         for (int i = 2; i <= number; i++) {
             if(number%i == 0){
