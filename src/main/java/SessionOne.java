@@ -1,4 +1,6 @@
+
 import java.util.Scanner;
+
 
 public class SessionOne {
 
@@ -20,6 +22,8 @@ public class SessionOne {
                 isAStrongNumber(number);
             case 3:
                 isAPerfectNumber(Integer.valueOf(number));
+            case 4:
+                isAPrimeNumber(Integer.valueOf(number));
         }
     }
 
@@ -29,6 +33,7 @@ public class SessionOne {
         double isArmstrong = 0;
 
         for (int i = 0; i < digits.length; i++) {
+
             isArmstrong += Math.pow(Double.parseDouble(digits[i]), 3);
         }
 
@@ -38,6 +43,7 @@ public class SessionOne {
             System.out.println("it is not an Armstrong number");
         }
     }
+
 
     public static void isAStrongNumber(String number) {
         String[] digits = number.split("(?<=.)");
@@ -74,6 +80,37 @@ public class SessionOne {
             System.out.println("The entered number " + number + " is a perfect number");
         else
             System.out.println("The entered number " + number + " is not a perfect number");
+    }
+
+    public static void nextPrimeNumber(int number){
+        boolean isPrime = isAPrimeNumber(number+1);
+        int nextPrime = number+2;
+        while (isPrime==false){
+            nextPrime = number+1;
+            isPrime = isAPrimeNumber(nextPrime);
+        }
+        if(isPrime == true){
+            System.out.println("number " + nextPrime);
+        }
+    }
+
+    public static boolean isAPrimeNumber(int number){
+        int divisors = 1;
+        for (int i = 2; i <= number; i++) {
+            if(number%i == 0){
+                divisors++;
+                if(divisors>2) {
+                    System.out.println("The number is not prime");
+                    break;
+                }
+            }
+        }
+        if(divisors==2) {
+            System.out.println("the number is prime");
+            return true;
+        }
+        else
+            return false;
     }
 }
 
