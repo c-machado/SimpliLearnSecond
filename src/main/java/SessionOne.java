@@ -27,7 +27,7 @@ public class SessionOne {
         }
     }
 
-    public static void isAnArmstrongNumber(String number) {
+    public static boolean isAnArmstrongNumber(String number) {
         String[] digits = number.split("(?<=.)");
 
         double isArmstrong = 0;
@@ -39,13 +39,15 @@ public class SessionOne {
 
         if (Integer.valueOf(number) == isArmstrong) {
             System.out.println("it is an Armstrong number");
+            return true;
         } else {
             System.out.println("it is not an Armstrong number");
+            return false;
         }
     }
 
 
-    public static void isAStrongNumber(String number) {
+    public static boolean isAStrongNumber(String number) {
         String[] digits = number.split("(?<=.)");
 
         double isStrong = 0;
@@ -64,22 +66,28 @@ public class SessionOne {
 
         if (isStrong == Integer.valueOf(number)) {
             System.out.println("The number is a Strong number " + isStrong);
+            return true;
         } else {
             System.out.println("The number is not a Strong number " + isStrong);
+            return false;
         }
     }
 
-    public static void isAPerfectNumber(int number) {
+    public static boolean isAPerfectNumber(int number) {
         int divisors = 0;
         for (int i = 1; i < number; i++) {
             if (number % i == 0) {
                 divisors += i;
             }
         }
-        if (divisors == number)
+        if (divisors == number) {
             System.out.println("The entered number " + number + " is a perfect number");
-        else
+            return true;
+        }
+        else{
             System.out.println("The entered number " + number + " is not a perfect number");
+            return false;
+        }
     }
 
     public static void nextPrimeNumber(int number){
